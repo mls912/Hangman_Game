@@ -9,15 +9,20 @@ var winCount = 0;
 var lossCount = 0;
 var guessesLeft = 0;
 
+var audioElement = document.createElement("audio");
+      
+
 function startGame() {
+	guessesLeft = 9;
+	wrongLetters = [];
+	blanksAndSuccesses = [];
+
 	selectedWord = wordOptions[Math.floor(Math.random() * wordOptions.length)];
 	lettersInWord = selectedWord.split("");
 	numBlanks = lettersInWord.length;
+	document.getElementById("wrongGuesses").innerHTML = wrongLetters;
 
-
-	guessesLeft = 9;
-	wrongLetter = [];
-	blanksAndSuccesses = [];
+	
 
 
 
@@ -74,7 +79,9 @@ function startGame() {
 			alert("Correct! " + selectedWord + "!");
 
 			document.getElementById("winCounter").innerHTML = winCount;
-		
+			audioElement.setAttribute("src", "theme.mp3");
+			audioElement.play();
+
 			startGame();
 		
 		}
@@ -94,6 +101,7 @@ startGame();
 
 document.onkeyup = function(event) {
         var letterGuessed = event.key;
+        audioElement.pause();
         checkLetters(letterGuessed);
         roundComplete();
 

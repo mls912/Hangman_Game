@@ -5,18 +5,32 @@
 	<title>Hangman Game</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style>
+	body {
+		
+		background-image: url("nfl-team-logos.jpg");
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right;
 
+		
+
+	}
+	</style>
 </head>
 <body>
-
+	
 	<div class="container">
-		<div class="jumbotron">
+		<div class="row">
+		<div class="col-md-4">
+		<div class="jumbotron myJumbotron">
 			<h1>Hangman</h1>
 			<p>Guess the NFL team!</p>
-
+		
 		</div>
 
-		<div class="panel panel-default">
+		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3 class="panel-title">Word to guess</h3>
 			</div>
@@ -26,31 +40,33 @@
 			</div>
 		</div>
 
-		<div class="panel panel-default">
+		<div class="panel panel-primary">
 			<div class="panel-body">
 				Letters guessed: <span id="wrongGuesses"></span>
 			</div>
 		</div>
 
-		<div class="panel panel-default">
+		<div class="panel panel-primary">
 			<div class="panel-body">
 				Guesses left: <span id="numGuesses"></span>
 			</div>
 		</div>
 
 
-		<div class="panel panel-default">
+		<div class="panel panel-primary">
 			<div class="panel-body">
 				Win counter: <span id="winCounter"></span>
 			</div>
 		</div>
 
-		<div class="panel panel-default">
+		<div class="panel panel-primary">
 			<div class="panel-body">
 				Loss counter: <span id="lossCounter"></span>
 			</div>
 		</div>
 
+		</div>
+		</div>
 
 	</div>
 
